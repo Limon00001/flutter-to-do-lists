@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
-
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
@@ -25,23 +21,23 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Welcome to Basic Flutter Design'),
+        title: Text('Curved Container with Pop-up'),
       ),
       body: Center(
         child: Container(
-          width: 300.0,
+          width: 200.0,
           height: 200.0,
-          decoration: const BoxDecoration(
-            color: Colors.black54,
+          child: Center(
+            child: Text(
+              'Flutter',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          decoration: BoxDecoration(
+            color: Colors.blue,
             borderRadius: BorderRadius.only(
               topLeft: Radius.circular(20.0),
               topRight: Radius.circular(20.0),
-            ),
-          ),
-          child: const Center(
-            child: Text(
-              'container, button, pop-up container',
-              style: TextStyle(color: Colors.white),
             ),
           ),
         ),
@@ -50,20 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           _showPopup(context);
         },
-        backgroundColor: Colors.blueAccent,
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
+        backgroundColor: Colors.red,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: Padding(
-        padding:
-            const EdgeInsets.only(bottom: 0.0), // Adjust the padding as needed
-        child: BottomAppBar(
-          shape: const CircularNotchedRectangle(),
-          child: Container(
-            height: 56.0,
-          ),
-        ),
-      ),
     );
   }
 
@@ -72,14 +58,14 @@ class _MyHomePageState extends State<MyHomePage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('Add Something'),
-          content: const Text('Hello! Welcome.'),
+          title: Text('Popup Container'),
+          content: Text('Hi'),
           actions: <Widget>[
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('Close'),
+              child: Text('Close'),
             ),
           ],
         );
