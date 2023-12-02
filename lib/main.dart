@@ -37,7 +37,7 @@ class _TodoListState extends State<TodoList> {
             imagePath:
                 'assets/limon.jpg', // Replace with the path to your profile image
             userName: 'Monayem Hossain limon',
-            userEmail: 'limonhossain82.com',
+            userEmail: 'limonhossain82@gmail.com',
             userLocation: 'Dhaka, Bangladesh',
             tasksAmount: tasks.length,
           ),
@@ -80,7 +80,7 @@ class _TodoListState extends State<TodoList> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: const Text('Cancel'),
+              child: const Text('Close'),
             ),
             TextButton(
               onPressed: () {
